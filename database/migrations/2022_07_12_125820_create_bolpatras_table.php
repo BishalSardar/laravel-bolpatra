@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('pdf');
+            $table->string('image');
             $table->string('desc');
             $table->date('start_date');
             $table->date('ending_date');

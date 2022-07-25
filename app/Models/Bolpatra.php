@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Bolpatra extends Model
 {
     use HasFactory;
-    protected $fillable = ['title', 'pdf', 'desc', 'start_date', 'ending_date'];
+    protected $fillable = ['title', 'pdf', 'image', 'desc', 'start_date', 'ending_date'];
 
     function bolpatra()
     {

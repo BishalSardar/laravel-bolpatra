@@ -102,7 +102,7 @@
         </div>
     </nav>
 
-    <div class="container mt-3 pt-5">
+    <div class="container">
         <form action="{{route('home.store')}}" method="POST" enctype="multipart/form-data" class="form">
             {{csrf_field()}}
 
@@ -113,6 +113,10 @@
             <div class="mb-3">
                 <label for="pdf" class="form-label">PDF</label>
                 <input type="file" name="pdf" class="form-control" id="file" accept=".pdf,.docs" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">Image</label>
+                <input type="file" name="image" class="form-control" id="file" accept=".jpg,.png,.jpeg" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
                 <label for="date" class="form-label">Start_date</label>
@@ -135,6 +139,7 @@
                     <th scope="col">#</th>
                     <th scope="col">Title</th>
                     <th scope="col">PDF</th>
+                    <th scope="col">Image</th>
                     <th scope="col">Start_date</th>
                     <th scope="col">Ending_date</th>
                     <th scope="col">Description</th>
@@ -148,6 +153,7 @@
                 </th>
                 <td>{{$item->title}}</td>
                 <td> <a href="pdf/{{$item->pdf}}" target="_blank">{{$item->pdf}}</a> </td>
+                <td> <img src="image/{{$item->image}}" alt="" class="image-style"> </td>
                 <td>{{$item->start_date}}</td>
                 <td>{{$item->ending_date}}</td>
                 <td>{{$item->desc}}</td>

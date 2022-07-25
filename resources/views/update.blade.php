@@ -99,6 +99,10 @@
                 <input type="file" name="pdf" class="form-control" id="file" accept=".pdf,.docs" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
+                <label for="image" class="form-label">Image</label>
+                <input type="file" name="image" class="form-control" id="file" accept=".jpg,.png,.jpeg" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
                 <label for="Start_date" class="form-label">Start_date</label>
                 <input type="date" name="start_date" class="form-control" id="start_date" value="{{$item['start_date']}}" aria-describedby="emailHelp">
             </div>

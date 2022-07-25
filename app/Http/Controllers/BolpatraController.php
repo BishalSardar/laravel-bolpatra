@@ -44,7 +44,12 @@ class BolpatraController extends Controller
 
             $tender = new Bolpatra();
 
-            if ($request->file('pdf')) {
+            if ($request->file('image') && $request->file('pdf')) {
+                $imgFile = $request->file('image');
+                $imgFileName = $imgFile->getClientOriginalName();
+                $imgFile->move(public_path('Image'), $imgFileName);
+                $tender['image'] = $imgFileName;
+
                 $file = $request->file('pdf');
                 $filename = $file->getClientOriginalName();
                 $file->move(public_path('PDF'), $filename);
@@ -102,7 +107,12 @@ class BolpatraController extends Controller
 
             $tender = Bolpatra::find($id);
 
-            if ($request->file('pdf')) {
+            if ($request->file('image') && $request->file('pdf')) {
+                $imgFile = $request->file('image');
+                $imgFileName = $imgFile->getClientOriginalName();
+                $imgFile->move(public_path('Image'), $imgFileName);
+                $tender['image'] = $imgFileName;
+
                 $file = $request->file('pdf');
                 $filename = $file->getClientOriginalName();
                 $file->move(public_path('PDF'), $filename);
