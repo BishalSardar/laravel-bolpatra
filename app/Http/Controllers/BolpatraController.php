@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Bolpatra;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Exception;
 
 class BolpatraController extends Controller
@@ -123,6 +124,11 @@ class BolpatraController extends Controller
     public function delete($id)
     {
         $data = Bolpatra::find($id);
+        $image_dest = 'Image/' . $data->image;
+        $pdf_des = 'PDF/' . $data->image;
+        if (File::exists($image_dest, $pdf_des)) {
+            File::delete($image_dest, $pdf_des);
+        }
         $data->delete();
         return redirect()->back();
     }
