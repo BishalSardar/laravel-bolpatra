@@ -21,4 +21,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/all-bolpatra', [ApiController::class, 'allBolpatra']);
+
 Route::get('/bolpatra/{id}', [ApiController::class, 'singleBolpatra']);
+
+Route::post('/save', [ApiController::class, 'save']);
+
+Route::get('/all-save', [ApiController::class, 'allSave']);
+
+Route::post('/search', [ApiController::class, 'search']);

@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Bolpatra extends Model
+class Save extends Model
 {
     use HasFactory;
-    protected $fillable = ['title', 'pdf', 'desc', 'start_date', 'ending_date'];
+    protected $fillable = ['user_id', 'bolpatra_id'];
 
     function bolpatra()
     {
-        return $this->belongsTo(Save::class);
+        return $this->belongsTo(Bolpatra::class);
     }
 }
